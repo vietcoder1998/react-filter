@@ -52,7 +52,7 @@ const convertToStringValueToValidValue = (key: string, value: any, isArray?: boo
   }
 }
 
-const convertStringValueToWithKey = (key: string, value: Date) => {
+const convertStringValueToWithKey = (key: string, value?: string | Date | null) => {
   if (!key || !value) {
     return null
   }
@@ -176,7 +176,7 @@ export default function useFilter<T>(props?: UsePropsDefaultFilter<T>) {
 
       // filter is object handler
       const filterSearch = Object.fromEntries(
-        Object.entries(newFilter).map(([key, value]) => [
+        Object.entries(newFilter).map(([key, value]: [string, string | Date | null]) => [
           key,
           convertStringValueToWithKey(key, value),
         ]),

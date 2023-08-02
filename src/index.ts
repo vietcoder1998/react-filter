@@ -1,6 +1,3 @@
 import useFilter from './useFilter'
 
-
-export {
-    useFilter
-}
+export { useFilter }
